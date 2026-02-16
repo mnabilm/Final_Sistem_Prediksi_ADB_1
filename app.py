@@ -144,7 +144,7 @@ if aktor == "User":
         gender = st.radio(
             "Pilih jenis kelamin:",
             options=[0, 1],
-            format_func=lambda x: "👨 Laki-laki" if x == 0 else "👩 Perempuan",
+            format_func=lambda x: "👩 Perempuan" if x == 0 else "👨 Laki-laki",
             horizontal=True,
             label_visibility="collapsed"
         )
@@ -262,7 +262,7 @@ if aktor == "User":
 
             # Save to log
             st.session_state.log_prediksi.append({
-                "Gender": "Laki-laki" if gender == 0 else "Perempuan",
+                "Gender": "Laki-laki" if gender == 0 else "Laki-laki",
                 "HGB": hgb,
                 "MCV": mcv,
                 "MCH": mch,
@@ -410,4 +410,5 @@ elif aktor == "Admin":
             st.caption(f"Menampilkan {len(filtered_data)} dari {total} data")
 
         else:
+
             st.info("📭 Belum ada data prediksi yang tersedia. Silakan lakukan prediksi terlebih dahulu pada mode User.")
